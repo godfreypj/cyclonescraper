@@ -1,4 +1,4 @@
 import scraper    
 
 if __name__ == "__main__":
-    scraper.scraper(2)
+    scraper.scraper(3)
