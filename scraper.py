@@ -17,7 +17,7 @@ def atlc():
     activeStorms = soup.find_all(class_='hdr')[0].get_text()
     stormImage = imageSoup.find("img", {"id": "twofig0d"})
     image = "https://www.nhc.noaa.gov" + stormImage["src"][:-7]
-    data = [title, "No Long/Lat Available", areaTitle, activeStorms, image]
+    data = [title, areaTitle, "No Long/Lat Available",  activeStorms, image]
     return data
 
 def epac():
