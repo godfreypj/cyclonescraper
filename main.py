@@ -83,7 +83,7 @@ def main():
         end_btn = tk.Button(popup_window, text="Main Menu", command=lambda: restart())
         end_btn.place(x=450, y=170)
 
-#Image URL scraped from the NOAA page is encoded, and displayed on the main window
+#Image URL scraped from the NOAA page is encoded, saved, and displayed on the main window
         raw_data = urllib.request.urlopen(data[4]).read()
         image = base64.encodebytes(raw_data)
         im = tk.PhotoImage(data=image)
