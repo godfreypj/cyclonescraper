@@ -1,10 +1,14 @@
+#Import statements:
+# requests for downloading needed webpage
+# beatifulsoup for parsing the webpage
 import pip._vendor.requests as requests
 from bs4 import BeautifulSoup
 
-#The class to retrieve data from the NOAA website.  Depending on the users selection,
-#  this will either retrieve data from Central, Eastern Pacific or Atlantic.  The args
-#  for the class are default "self" and the "selection", which is an int (for now)
-
+#The module will retrieve data from the NOAA website.  Depending on the users selection,
+#  this will either retrieve data from Atlantic Ocean, or Pacific or Central Pacific Ocean.
+#  Each function requests and parses two separate webpages, one for the strings of data
+#  on each area, and one for the image of active cyclones in that area.  Each peice of data
+#  is set as a string in a given index of a list, and sent back to the main module.
     
 def atlc():
     page = requests.get("https://www.nhc.noaa.gov/?atlc")
@@ -49,8 +53,3 @@ def cpac():
     image = "https://www.nhc.noaa.gov" + stormImage["src"][:-7]
     data = [title, areaTitle, areaLongLat, activeStorms, image]
     return data
-
-
-
-
-            
